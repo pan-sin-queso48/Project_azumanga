@@ -1,16 +1,24 @@
-# Project_azumanga (Hyprland Dotfiles)
+████  ████   ███    ███ █████  ███  █████       ███  █████ █   █ █   █  ███  █   █  ███   ███    
+█░░░█ █░░░█ █ ░░█    █░░█░░░░░█ ░░░  ░█░░░     █ ░░█  ░░█░░█░  █░██ ██░█ ░░█ ██  █░█ ░░░ █ ░░█   
+████░░████░░█░ ░█░   █░░████░░█░ ░░░  █░░░░    █████░  █░░░█░░ █░█░█ █░█████░█░█ █░█░ ██░█████░  
+█░░░░ █░░█░ █░░ █░█  █░░█░░░░ █░░     █░░      █░░░█░░█ ░ ░█░░ █░█░░░█░█░░░█░█░░██░█░░ █░█░░░█░░ 
+█░░░░░█░░░█░ ███ ░░██ ░░█████░ ███    █░░ ████ █░░░█░█████  ███ ░█░░ █░█░░░█░█░░ █░░███ ░█░░░█░░ 
+ ░░    ░░  ░  ░░░ ░ ░░ ░ ░░░░░  ░░░    ░░  ░░░░ ░░  ░░░░░░░  ░░░ ░░░  ░░░░  ░░░░  ░░ ░░░ ░░░  ░░ 
+  ░     ░   ░  ░░░   ░░   ░░░░░  ░░░    ░   ░░░░ ░   ░ ░░░░░  ░░░  ░   ░ ░   ░ ░   ░  ░░░  ░   ░ 
 
 ¡Hola! Esta es mi configuración personal de Hyprland para el día a día. A diferencia de la mayoría de setups que encuentras en internet, este proyecto **huye por completo del minimalismo clásico** de Hyprland. Está diseñado priorizando una personalización visual completa, comodidad y un entorno lleno de vida basado en mis gustos personales.
 
-Esta primera versión es completamente **estable y funcional para el uso diario**.
+En adelante se vienen actualizaciones pequeñas agregando una o dos funciones nuevas, pero todo con tal de que quede estable cada funcion y que hasta yo que cambio de ditribucion cada cierto tiempo pueda instalarlo sin mayor preblema 
+
+Tambien incluye algun que otra imagen o fondo de Yotsuba&!, otra obra de Kiyohiko Azuma pero en su mayoria hay Azumanga Daioh
 
 ## ⚠️ Notas importantes antes de usar
 
-- **No es un instalador automático:** Esta configuración está hecha a medida para mi laptop y mi comodidad, por lo que si decides usarla, tendrás que revisar los archivos y adaptarlos a tu hardware.
+- **No es un instalador automático:** Esta configuración está hecha a medida para mi laptop y mi comodidad, por lo que si decides usarla, tendrás que revisar los archivos y adaptarlos a tu hardware tambien mover archivos en donde corresponde y recomiendo usar "noto sans mono CJK JP" para 
 - **Estructura modular:** Para mantener el orden, la configuración principal `hyprland.conf` está dividida en submódulos numerados dentro de la carpeta `conf.d/` (animaciones, decoración, reglas de ventanas, bindings, etc.).
 
 ## 🖼️ Scripts incluidos
-El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encarga de seleccionar y rotar de forma aleatoria tus fondos de pantalla cada 5 minutos usando `swaybg`y un spript para tomar capturas de pantalla con grim
+El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encarga de seleccionar y rotar de forma aleatoria tus fondos de pantalla cada 5 minutos usando `swaybg` y un spript para tomar capturas de pantalla con grim
 
 *Nota: Cuenta con un retraso inicial (`sleep 2`) para garantizar que el entorno gráfico y los monitores hayan cargado por completo antes de aplicar el fondo, asegurando que sea totalmente estable.*
 
