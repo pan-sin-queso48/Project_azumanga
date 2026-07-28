@@ -1,0 +1,248 @@
+/* =========================================================
+ *  PALETA DE COLORES - AZUMANGA DAIOH
+ *  ========================================================= */
+@define-color azu-pink       #f5a9b8; /* Rosado pastel principal */
+@define-color azu-pink-dark  #d87093; /* Rosado para acentos/hover */
+@define-color azu-yellow     #f7d154; /* Amarillo uniforme */
+@define-color azu-blue       #8ecae6; /* Azul cielo */
+@define-color azu-green      #a8e6cf; /* Verde menta suave */
+@define-color azu-orange     #f0932b; /* Naranja pastel */
+@define-color azu-purple     #c8b6ff; /* Lavanda / Púrpura suave */
+
+@define-color azu-bg-dark    rgba(30, 30, 46, 0.75); /* Fondo oscuro semitransparente */
+@define-color azu-bg-module  rgba(255, 255, 255, 0.12); /* Fondo suave para módulos */
+@define-color azu-fg        #ffffff; /* Texto claro */
+@define-color azu-fg-dark   #1e1e2e; /* Texto oscuro para contrastes */
+
+/* =========================================================
+ *  ESTILOS GENERALES Y BARRA
+ *  ========================================================= */
+* {
+    font-family: FontAwesome, "JetBrainsMono Nerd Font", "Noto Sans CJK JP", "Noto Color Emoji", sans-serif;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+window#waybar {
+    background-color: @azu-bg-dark;
+    border-bottom: 3px solid @azu-pink;
+    color: @azu-fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @azu-yellow;
+}
+
+/* =========================================================
+ *  WORKSPACES (ESPACIOS DE TRABAJO)
+ *  ========================================================= */
+#workspaces button {
+padding: 0 8px;
+background-color: transparent;
+color: @azu-fg;
+}
+
+#workspaces button:hover {
+background: rgba(255, 255, 255, 0.15);
+color: @azu-yellow;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+background-color: @azu-pink;
+color: @azu-fg-dark;
+font-weight: bold;
+box-shadow: inset 0 -3px @azu-yellow;
+}
+
+#workspaces button.urgent {
+background-color: #eb4d4b;
+color: #ffffff;
+}
+
+/* =========================================================
+ *  ESTILO BÁSICO DE MÓDULOS
+ *  ========================================================= */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+padding: 0 10px;
+margin: 2px 2px;
+color: @azu-fg;
+}
+
+#window,
+#workspaces {
+margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* =========================================================
+ *  COLORES ESPECÍFICOS POR MÓDULO (PALETA AZUMANGA)
+ *  ========================================================= */
+
+#clock {
+background-color: @azu-pink;
+color: @azu-fg-dark;
+font-weight: bold;
+}
+
+#battery {
+background-color: @azu-green;
+color: @azu-fg-dark;
+}
+
+#battery.charging, #battery.plugged {
+background-color: #26A65B;
+color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+background-color: #f53c3c;
+color: #ffffff;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: steps(12);
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+padding-right: 15px;
+background-color: @azu-purple;
+color: @azu-fg-dark;
+}
+
+#power-profiles-daemon.performance {
+background-color: #f53c3c;
+color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+background-color: @azu-blue;
+color: @azu-fg-dark;
+}
+
+#power-profiles-daemon.power-saver {
+background-color: @azu-green;
+color: @azu-fg-dark;
+}
+
+#cpu {
+background-color: @azu-purple;
+color: @azu-fg-dark;
+}
+
+#memory {
+background-color: @azu-pink-dark;
+color: #ffffff;
+}
+
+#disk {
+background-color: @azu-orange;
+color: #ffffff;
+}
+
+#backlight {
+background-color: @azu-yellow;
+color: @azu-fg-dark;
+}
+
+#network {
+background-color: @azu-blue;
+color: @azu-fg-dark;
+}
+
+#network.disconnected {
+background-color: #f53c3c;
+color: #ffffff;
+}
+
+#pulseaudio {
+background-color: @azu-yellow;
+color: @azu-fg-dark;
+}
+
+#pulseaudio.muted {
+background-color: #64727D;
+color: #ffffff;
+}
+
+#temperature {
+background-color: @azu-orange;
+color: #ffffff;
+}
+
+#temperature.critical {
+background-color: #eb4d4b;
+}
+
+#tray {
+background-color: @azu-bg-module;
+}
+
+#idle_inhibitor {
+background-color: @azu-pink-dark;
+color: #ffffff;
+}
+
+#idle_inhibitor.activated {
+background-color: @azu-yellow;
+color: @azu-fg-dark;
+}
+
+#mpd {
+background-color: @azu-green;
+color: @azu-fg-dark;
+}
+
+#mpd.disconnected {
+background-color: #f53c3c;
+}
+
+#keyboard-state {
+background: @azu-pink;
+color: @azu-fg-dark;
+margin: 0 5px;
+}
