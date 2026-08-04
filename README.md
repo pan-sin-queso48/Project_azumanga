@@ -47,6 +47,19 @@ El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encar
 - **Fondos de Pantalla:** Las imágenes incluidas en la carpeta `fondos` y `fastfetch_logos` fueron recopiladas de Pinterest con fines puramente estéticos y de personalización personal. **No poseo los derechos de autor de estas ilustraciones.** Pertenecen a sus respectivos creadores originales y/o a los titulares de las franquicias. 
 - Si eres el autor de alguna de las imágenes y deseas que sea retirada del repositorio, por favor abre un *Issue* o ponte en contacto conmigo y la eliminaré de inmediato.
 
+## Funcion de mpv
+Si quieres escuchar música sin tener que abrir el navegador. He preparado una configuración de mpv para que puedan escuchar música en modo aleatorio y solo oprimiendo “super + Y” o “super + U”. Con dos playlist, una es mi playlist de lo que a mí me gusta, y la otra es para darle más ambiente al escritorio, con músicas de mi selección y gusto, pero si quieres escuchar de tu propia playlist puedes modificar  uno de los dos archivos en donde trae el script, cambia el URL de la playlist que ya está por el URL de tu playlist
+>**Nota:**el archivo `playlist.sh` es mi playlist que si quieres puedes escucharlo y se ejecuta con `super + Y` y el archivo `algo.sh` es la playlist que solo contiene musica japonesa de mi seleccion y gusto y ejecuta con `super + U`, para parar o reanundar es con `super + P`, para cambiar a la siguiente cancion es con `super + O` y para cambiar a la anterior es con `super + I`, y si queres puedes cambiarlo en en archivo `07-bindings.conf` 
+
+**Cosas por instalar:** 
+
+* `mpv`
+* `yt-dlp`
+* `playerctl`
+* `mpv-mpris`
+
+**Aviso:** Pero antes de eso, recuerda que no es un instalador automático, para que funcione asegúrate de que sean ejecutables los archivos `playlist.sh` y `algo.sh`, debes mover los archivos `playlist.sh` y `algo.sh` a esta dirección: `~/.local/bin` ejecutar estos comandos: `mkdir -p ~/.config/mpv/scripts` y  `ln -s /usr/lib64/mpv/mpris.so ~/.config/mpv/scripts/mpris.so` para que funciene los atajos de playerctl funcione correctamente y para que el sistema reconosca los datos y la musica 
+
 ## 📦 Historial de versiones
 
 | Versión |      Fecha      |   Cambios                                                   |
@@ -63,3 +76,14 @@ El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encar
 | Fedora       | Fedora 44       | ⏳ En pausa  | No esta disponible hyprland en los paquetes oficiales de fedora en la versión fedora 44, pero probare en otra versión anterior de Fedora |
 | Arch Linux   | Linux 7.1.5-arch1-1 | ✅ Funciona | Si funciona, pero se tuvieron que hacer cambios pequeños y se adapto la configuración a hyprland 0.56 |
 | NixOS        | -               | ⏳ Pendiente | Planeado para el futuro (ya cuando sea mas avanzado)|
+| openSUSE     | openSUSE Tumbleweed | ✅ Funciona | Funciona pero con algunos arreglos |
+
+## Notas para openSUSE
+Para esta Distribución se tuvieron que hacer cambios y les recomiendo instalar: **qt5-wayland**, **qt6-wayland**, **kf6-kio** y **xdg-desktop-portal-gtk**
+En openSUSE no se podia instalar establemente `xdg-desktop-portal-hyprland` y `hyprlauncher` no se porque pero por eso use alternativas como el menu de `rofi` en ves de `hyprlauncher `
+
+
+
+
+
+
