@@ -1,0 +1,152 @@
+/* ~/.config/rofi/config.rasi */
+/* Tema: Project_Azumanga Rofi 🌸 */
+
+configuration {
+    modi:                       "drun,run,filebrowser";
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+    display-drun:               "アプリ (Apps)";
+    drun-display-format:        "{name}";
+    font:                       "Comfortaa Bold 11";
+}
+
+* {
+    /* Paleta de Colores Azumanga */
+    bg-main:                    #fff0f5e6;
+    bg-card:                    #ffffff;
+    bg-selected:                #ffb6c1;
+    fg-main:                    #4a3b4e;
+    fg-muted:                   #a08b9b;
+    border-color:               #ff8da1;
+
+    background-color:           transparent;
+    text-color:                 @fg-main;
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    width:                      800px;
+    x-offset:                   0px;
+    y-offset:                   0px;
+
+    enabled:                    true;
+    margin:                     0px;
+    padding:                    0px;
+    border:                     2px solid;
+    border-radius:              20px;
+    border-color:               @border-color;
+    background-color:           @bg-main;
+    cursor:                     "default";
+}
+
+mainbox {
+    enabled:                    true;
+    orientation:                horizontal;
+    spacing:                    0px;
+    margin:                     0px;
+    padding:                    0px;
+    background-color:           @bg-main;
+    children:                   [ "image-container", "right-box" ];
+}
+
+image-container {
+    width:                      240px;
+    enabled:                    true;
+    background-color:           transparent;
+    background-image:           url("~/.config/rofi/images/current.png", height);
+}
+
+right-box {
+    enabled:                    true;
+    spacing:                    15px;
+    padding:                    25px;
+    background-color:           transparent;
+    children:                   [ "inputbar", "listview" ];
+}
+
+/* --- BARRA DE BÚSQUEDA --- */
+inputbar {
+    enabled:                    true;
+    spacing:                    10px;
+    margin:                     0px;
+    padding:                    12px 18px;
+    border-radius:              15px;
+    background-color:           @bg-card;
+    text-color:                 @fg-main;
+    children:                   [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                    true;
+    background-color:           inherit;
+    text-color:                 @border-color;
+}
+
+entry {
+    enabled:                    true;
+    background-color:           inherit;
+    text-color:                 inherit;
+    cursor:                     text;
+    placeholder:                "何を探す？ (¿Qué buscas?)...";
+    placeholder-color:          @fg-muted;
+}
+
+/* --- LISTA DE APLICACIONES --- */
+listview {
+    enabled:                    true;
+    columns:                    1;
+    lines:                      6;
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+    layout:                     vertical;
+    reverse:                    false;
+    fixed-height:               true;
+    fixed-columns:              true;
+
+    spacing:                    8px;
+    margin:                     0px;
+    padding:                    0px;
+    background-color:           transparent;
+    text-color:                 @fg-main;
+}
+
+element {
+    orientation:                  horizontal;
+    children:                     [ element-icon, element-text ];
+    spacing:                      10px;
+    padding:                      8px 12px;
+    border-radius:                12px;
+    background-color:             transparent;
+    text-color:                   #4a3b4e;
+}
+
+element normal.normal {
+    background-color:           transparent;
+    text-color:                 @fg-main;
+}
+
+element selected.normal {
+    background-color:             #ffb6c1;
+    text-color:                   #ffffff;
+}
+
+element-icon {
+    background-color:           transparent;
+    text-color:                 inherit;
+    size:                       32px;
+    cursor:                     inherit;
+}
+
+element-text {
+    vertical-align:               0.5;
+    horizontal-align:              0.0;
+    cursor:                       pointer;
+    background-color:             transparent;
+    text-color:                   inherit;
+}
+element-text selected {
+    text-color:                   #ffffff;
+}

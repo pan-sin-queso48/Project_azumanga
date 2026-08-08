@@ -1,0 +1,64 @@
+/* ~/.config/rofi/powermenu.rasi */
+/* Tema: Powermenu Project Azumanga 🌸 */
+
+configuration {
+    font:                       "Comfortaa Bold 18";
+    show-icons:                 false;
+}
+
+* {
+    /* Paleta de colores */
+    bg-overlay:                 #fff0f5e6;
+    bg-card:                    #ffffffcc;
+    bg-selected:                #ffb6c1;
+    fg-main:                    #4a3b4e;
+
+    background-color:           transparent;
+    text-color:                 @fg-main;
+}
+
+window {
+    fullscreen:                 false;
+    background-image:           url("~/.config/rofi/images/current.png", height);
+}
+
+mainbox {
+    background-color:           @bg-overlay;
+    children:                   [ "listview" ];
+    padding:                    38% 10%;
+    spacing:                    0px;
+}
+
+inputbar {
+    enabled:                    false;
+}
+
+listview {
+    layout:                     horizontal;
+    spacing:                    35px;
+    background-color:           transparent;
+    /* alineación al centro */
+    horizontal-align:           0.5;
+}
+
+element {
+    /* tamaño de las tarjetas o botones */
+    padding:                    60px 40px;
+    border-radius:              25px;
+    background-color:           @bg-card;
+    text-color:                 @fg-main;
+    cursor:                     pointer;
+}
+
+element selected.normal {
+    background-color:           @bg-selected;
+    text-color:                 #ffffff;
+}
+
+element-text {
+    horizontal-align:           0.5;
+    vertical-align:             0.5;
+    background-color:           transparent;
+    text-color:                 inherit;
+    cursor:                     inherit;
+}
