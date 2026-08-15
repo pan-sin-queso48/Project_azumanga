@@ -20,6 +20,14 @@ En adelante se vienen actualizaciones pequeñas agregando una o dos funciones nu
 
 Tambien incluye algun que otra imagen o fondo de Yotsuba&!, otra obra de Kiyohiko Azuma y tambien de otros animes del genero "slice of life" como:k-on, lucky star y nichijou pero en su mayoria hay Azumanga Daioh
 
+> [!NOTE]
+> **Proyecto en Pausa Temporal**
+> Este proyecto se encuentra pausado temporalmente porque tristemente ya me toca entrar al la universidad. **No está abandonado**
+> Durante un tiempo no habra actualizaciones, ya que me he enfocado en aprender diseño grafico para creae mis propios diseños, y proximamente habra iconos hechos por mi
+>Por ahora a esperar
+>あ
+
+
 ## ⚠️ Notas importantes antes de usar
 
 - **No es un instalador automático:** Esta configuración está hecha a medida para mi laptop y mi comodidad, por lo que si decides usarla, tendrás que revisar los archivos y adaptarlos a tu hardware tambien mover archivos en donde corresponde y recomiendo usar "noto sans mono CJK JP" para que se vean los caracteres de la Waybar.
