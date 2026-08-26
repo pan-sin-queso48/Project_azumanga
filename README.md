@@ -18,7 +18,7 @@
 
 En adelante se vienen actualizaciones pequeñas agregando una o dos funciones nuevas, pero todo con tal de que quede estable cada funcion y que hasta yo que cambio de ditribucion cada cierto tiempo pueda instalarlo sin mayor preblema 
 
-Tambien incluye algun que otra imagen o fondo de Yotsuba&!, otra obra de Kiyohiko Azuma y tambien de otros animes del genero "slice of life" como:k-on, lucky star y nichijou pero en su mayoria hay Azumanga Daioh
+Tambien incluye algun que otra imagen o fondo de Yotsuba&!, otra obra de Kiyohiko Azuma, pero en su mayoria hay Azumanga Daioh
 
 > [!NOTE]
 > **Proyecto en Pausa Temporal**
