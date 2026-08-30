@@ -1,38 +1,18 @@
-████  ████   ███    ███ █████  ███  █████
-█░░░█ █░░░█ █ ░░█    █░░█░░░░░█ ░░░  ░█░░░
-████░░████░░█░ ░█░   █░░████░░█░ ░░░  █░░░░
-█░░░░ █░░█░ █░░ █░█  █░░█░░░░ █░░     █░░
-█░░░░░█░░░█░ ███ ░░██ ░░█████░ ███    █░░
- ░░    ░░  ░  ░░░ ░ ░░ ░ ░░░░░  ░░░    ░░
-  ░     ░   ░  ░░░   ░░   ░░░░░  ░░░    ░
+## Project_azumanga
   
- ███  █████ █   █ █   █  ███  █   █  ███   ███ 
-█ ░░█  ░░█░░█░  █░██ ██░█ ░░█ ██  █░█ ░░░ █ ░░█ 
-█████░  █░░░█░░ █░█░█ █░█████░█░█ █░█░ ██░█████░ 
-█░░░█░░█ ░ ░█░░ █░█░░░█░█░░░█░█░░██░█░░ █░█░░░█░░ 
-█░░░█░█████  ███ ░█░░ █░█░░░█░█░░ █░░███ ░█░░░█░░ 
- ░░  ░░░░░░░  ░░░ ░░░  ░░░░  ░░░░  ░░ ░░░ ░░░  ░░ 
-  ░   ░ ░░░░░  ░░░  ░   ░ ░   ░ ░   ░  ░░░  ░   ░ 
-  
-¡Hola! Esta es mi configuración personal de Hyprland para el día a día. A diferencia de la mayoría de setups que encuentras en internet, este proyecto **huye por completo del minimalismo clásico** de Hyprland. Está diseñado priorizando una personalización visual completa, comodidad y un entorno lleno de vida basado en mis gustos personales de anime.
+¡Hola! Esta es mi configuración personal de Hyprland, que lo he transformado en mi proyecto personal para compartirlo la comunidad de Azumanga Daioh. A diferencia de la mayoría de setups que encuentras en internet, este proyecto **huye por completo del minimalismo clásico** de Hyprland. Está diseñado priorizando una personalización visual completa, comodidad y un entorno lleno de vida con estetica de Azumanga Daioh
 
-En adelante se vienen actualizaciones pequeñas agregando una o dos funciones nuevas, pero todo con tal de que quede estable cada funcion y que hasta yo que cambio de ditribucion cada cierto tiempo pueda instalarlo sin mayor preblema 
+Este proyecto Este proyecto recibirá actualizaciones pequeñas o después de un tiempo debido a que actualmente me encuentro estudiando y ademas aprendiendo varias cosas como lenguajes de programación, diseño gráfico y a usar aplicaciones que me sirvan para lo que tengo planeado hacer para el proyecto. 
+Todo con tal de que quede estable cada funcion y que hasta yo que cambio de ditribucion cada cierto tiempo pueda instalarlo sin mayor preblema.
 
-Tambien incluye algun que otra imagen o fondo de Yotsuba&!, otra obra de Kiyohiko Azuma, pero en su mayoria hay Azumanga Daioh
-
-> [!NOTE]
-> **Proyecto en Pausa Temporal**
-> Este proyecto se encuentra pausado temporalmente porque tristemente ya me toca entrar al la universidad. **No está abandonado**
-> Durante un tiempo no habra actualizaciones, ya que me he enfocado en aprender diseño grafico para creae mis propios diseños, y proximamente habra iconos hechos por mi
->Por ahora a esperar
->あ
+Tambien incluye algun que otra imagen, fondo o referencia de Yotsuba&!, otra obra de Kiyohiko Azuma, pero en su mayoria hay Azumanga Daioh.
 
 
 ## ⚠️ Notas importantes antes de usar
 
 - **No es un instalador automático:** Esta configuración está hecha a medida para mi laptop y mi comodidad, por lo que si decides usarla, tendrás que revisar los archivos y adaptarlos a tu hardware tambien mover archivos en donde corresponde y recomiendo usar "noto sans mono CJK JP" para que se vean los caracteres de la Waybar.
 - **Estructura modular:** Para mantener el orden, la configuración principal `hyprland.conf` está dividida en submódulos numerados dentro de la carpeta `conf.d/` (animaciones, decoración, reglas de ventanas, bindings, etc.).
-- **Más notas:** Esta configuracion originalmente fue echo en debian 13 y con hyprland 0.53, las versiones 1.0 y 1.1 fueron configuradas en hyprland 0.53, de ahi en adelante sera configurado en hyprland 0.56 y puesto a prueba en Arch.
+- **Más notas:** Esta configuracion originalmente fue echo en debian 13 y con hyprland 0.53, las versiones 1.0 y 1.1 fueron configuradas en hyprland 0.53, de ahi en adelante sera configurado en hyprland 0.56
 
 ## 🖼️ Scripts incluidos
 El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encarga de seleccionar y rotar de forma aleatoria tus fondos de pantalla cada 5 minutos usando `swaybg` y `hyprpaper`, y un spript para tomar capturas de pantalla con `grim`
@@ -67,15 +47,8 @@ Tambien con el archivo `azu.sh` sirve para reproducir una playlist de los capitu
 * `playerctl`
 * `mpv-mpris`
 
-**Aviso:** Pero antes de eso, recuerda que no es un instalador automático, para que funcione asegúrate de que sean ejecutables los archivos `playlist.sh`, `algo.sh` y `azu.sh`; debes mover los archivos `playlist.sh`, `algo.sh` y `azu.sh` a esta dirección: `~/.local/bin` y ejecutar estos comandos: `mkdir -p ~/.config/mpv/scripts` y  `ln -s /usr/lib64/mpv/mpris.so ~/.config/mpv/scripts/mpris.so` para que funciene los atajos de playerctl funcione correctamente y para que el sistema reconosca los datos y la musica 
+**Aviso:** Pero antes de eso, recuerda que no es un instalador automático, para que funcione asegúrate de que sean ejecutables los archivos `playlist.sh`, `algo.sh` y `azu.sh`; debes mover los archivos `playlist.sh`, `algo.sh` y `azu.sh` a esta dirección: `~/.local/bin` y ejecutar estos comandos: `mkdir -p ~/.config/mpv/scripts` y  `ln -s /usr/lib64/mpv/mpris.so ~/.config/mpv/scripts/mpris.so` para que funciene los atajos de playerctl funcione correctamente y para que el sistema reconosca los datos y la musica.
 
-## 📦 Historial de versiones
-
-| Versión |      Fecha      |   Cambios                                                   |
-|---------|-----------------|-------------------------------------------------------------|
-| v1.0.0  | 17 Julio 2026   | Primera versión publicada.                                  |
-| v1.1.0  | 24 Julio 2026   | Mejoras en los atajos de teclado y configuración de Waybar. |
-| v1.1.1  | 28 Julio 2026   | Actualizado para hyprland 0.56 y probado en Arch Linux      |
 
 ## 🖥️ Compatibilidad
 
@@ -86,6 +59,7 @@ Tambien con el archivo `azu.sh` sirve para reproducir una playlist de los capitu
 | Arch Linux   | Linux 7.1.5-arch1-1 | ✅ Funciona | Si funciona, pero se tuvieron que hacer cambios pequeños y se adapto la configuración a hyprland 0.56 |
 | NixOS        | -               | ⏳ Pendiente | Planeado para el futuro (ya cuando sea mas avanzado)|
 | openSUSE     | openSUSE Tumbleweed | ✅ Funciona | Funciona pero con algunos arreglos |
+>Poximamente probare en mas
 
 ## Notas para openSUSE
 Para esta Distribución se tuvieron que hacer cambios y les recomiendo instalar: **qt5-wayland**, **qt6-wayland**, **kf6-kio** y **xdg-desktop-portal-gtk**
