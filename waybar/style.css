@@ -1,248 +1,743 @@
-/* =========================================================
- *  PALETA DE COLORES - AZUMANGA DAIOH
- *  ========================================================= */
-@define-color azu-pink       #f5a9b8; /* Rosado pastel principal */
-@define-color azu-pink-dark  #d87093; /* Rosado para acentos/hover */
-@define-color azu-yellow     #f7d154; /* Amarillo uniforme */
-@define-color azu-blue       #8ecae6; /* Azul cielo */
-@define-color azu-green      #a8e6cf; /* Verde menta suave */
-@define-color azu-orange     #f0932b; /* Naranja pastel */
-@define-color azu-purple     #c8b6ff; /* Lavanda / Púrpura suave */
+/* la super waybar*/
 
-@define-color azu-bg-dark    rgba(30, 30, 46, 0.75); /* Fondo oscuro semitransparente */
-@define-color azu-bg-module  rgba(255, 255, 255, 0.12); /* Fondo suave para módulos */
-@define-color azu-fg        #ffffff; /* Texto claro */
-@define-color azu-fg-dark   #1e1e2e; /* Texto oscuro para contrastes */
+/*jarvis*/
 
-/* =========================================================
- *  ESTILOS GENERALES Y BARRA
- *  ========================================================= */
+/* CONFIGURACIÓN GENERAL */
+
 * {
-    font-family: FontAwesome, "JetBrainsMono Nerd Font", "Noto Sans CJK JP", "Noto Color Emoji", sans-serif;
-    font-size: 13px;
-    border-radius: 4px;
-}
-
-window#waybar {
-    background-color: @azu-bg-dark;
-    border-bottom: 3px solid @azu-pink;
-    color: @azu-fg;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
     border: none;
     border-radius: 0;
+
+    font-family:
+    "Noto Sans CJK JP",
+    "Noto Sans JP",
+    "Segoe UI",
+    "FiraCode Nerd Font",
+    sans-serif;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    min-height: 0;
 }
 
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px @azu-yellow;
+
+/* BARRA PRINCIPAL */
+
+window#waybar {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0)
+    );
+    color: #ffffff;
 }
 
-/* =========================================================
- *  WORKSPACES (ESPACIOS DE TRABAJO)
- *  ========================================================= */
+window#waybar.empty {
+    background-color: transparent;
+}
+
+
+/* CONTENEDORES */
+
+.modules-left {
+    margin-left: 5px;
+}
+
+.modules-center {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.modules-right {
+    margin-right: 5px;
+}
+
+
+/* ESTILO BASE DE LOS MODULOS */
+
+#window,
+#mpd,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#keyboard-state,
+#battery,
+#clock,
+#tray,
+#custom-power {
+    color: #51484a;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.92),
+        rgba(255, 232, 241, 0.88)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid rgba(230, 74, 117, 0.60);
+    border-radius: 9px;
+
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px rgba(230, 74, 117, 0.20),
+    0 2px 4px rgba(120, 45, 20, 0.35);
+
+    margin: 4px 2px;
+    padding: 0 9px;
+
+    text-shadow: 0 1px rgba(255, 255, 255, 0.90);
+
+    transition-property: background-color, color;
+    transition-duration: 180ms;
+}
+
+
+/* EFECTO HOVER */
+
+#mpd:hover,
+#idle_inhibitor:hover,
+#pulseaudio:hover,
+#network:hover,
+#power-profiles-daemon:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#keyboard-state:hover,
+#battery:hover,
+#clock:hover,
+#tray:hover,
+#custom-power:hover {
+    color: #e8407c;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1),
+        rgba(255, 190, 215, 0.98)
+    );
+
+    border-bottom-color: #e64a75;
+
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 1),
+    inset 0 -2px rgba(230, 74, 117, 0.30),
+    0 2px 6px rgba(110, 40, 20, 0.50);
+}
+
+
+/* ESPACIOS DE TRABAJO */
+
+#workspaces {
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 248, 231, 0.92),
+        rgba(255, 185, 208, 0.92)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 2px solid rgba(230, 74, 117, 0.70);
+    border-radius: 10px;
+
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 1),
+    0 2px 5px rgba(120, 45, 20, 0.35);
+
+    margin: 4px 2px;
+    padding: 2px 3px;
+}
+
 #workspaces button {
-padding: 0 8px;
-background-color: transparent;
-color: @azu-fg;
+    color: #8a3358;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 120, 165, 0.50)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-bottom: 2px solid rgba(230, 74, 117, 0.55);
+    border-radius: 7px;
+
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.90),
+    0 1px 2px rgba(100, 40, 30, 0.30);
+
+    margin: 1px 2px;
+    padding: 0 7px;
+
+    font-family:
+    "Noto Sans CJK JP",
+    "Noto Sans JP",
+    sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    text-shadow: 0 1px rgba(255, 255, 255, 0.90);
+
+    transition-property: background-color, color;
+    transition-duration: 160ms;
 }
 
 #workspaces button:hover {
-background: rgba(255, 255, 255, 0.15);
-color: @azu-yellow;
+    color: #6b1f42;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff,
+        #ff9ec2
+    );
+
+    border-bottom-color: #e64a75;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
-background-color: @azu-pink;
-color: @azu-fg-dark;
-font-weight: bold;
-box-shadow: inset 0 -3px @azu-yellow;
+#window, #pulseaudio, #cpu, #memory, #battery {
+    color: #2c1d23;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 180, 205, 0.90) 50%,
+        rgba(255, 130, 175, 0.85) 100%
+    );
+    border: 1px solid #ffffff;
+    border-bottom: 2px solid #e64a75;
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 1),
+    0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.urgent {
-background-color: #eb4d4b;
-color: #ffffff;
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff5c75,
+        #d92e50
+    );
+
+    border-bottom-color: #8f263d;
+
+    text-shadow: 0 1px rgba(91, 21, 38, 0.80);
 }
 
-/* =========================================================
- *  ESTILO BÁSICO DE MÓDULOS
- *  ========================================================= */
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
+#workspaces button.empty {
+    color: rgba(93, 76, 82, 0.68);
+}
+
+
+/* TÍTULO DE LA VENTANA */
+
+#window {
+    color: #4b2a8a;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.92),
+        rgba(210, 184, 255, 0.92)
+    );
+
+    border-bottom-color: rgba(138, 95, 216, 0.70);
+
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+
+/* MUSICA */
+
 #mpd {
-padding: 0 10px;
-margin: 2px 2px;
-color: @azu-fg;
+    color: #17925f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f0fff8,
+        #7be8bd
+    );
+
+    border-bottom-color: #2fb884;
 }
 
-#window,
-#workspaces {
-margin: 0 4px;
+#mpd.playing {
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8fbd,
+        #ff4f93
+    );
+
+    border-bottom-color: #b82a63;
+
+    text-shadow: 0 1px rgba(120, 20, 60, 0.70);
 }
 
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+#mpd.paused {
+    color: #7a5410;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff2a6,
+        #ffd93d
+    );
+
+    border-bottom-color: #d0a200;
 }
 
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#mpd.stopped,
+#mpd.disconnected {
+    color: #82767a;
+    background-color: rgba(240, 228, 232, 0.92);
 }
 
-/* =========================================================
- *  COLORES ESPECÍFICOS POR MÓDULO (PALETA AZUMANGA)
- *  ========================================================= */
 
-#clock {
-background-color: @azu-pink;
-color: @azu-fg-dark;
-font-weight: bold;
+/* INACTIVIDAD */
+
+#idle_inhibitor.activated {
+    color: #14603f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #eafff5,
+        #5fdba0
+    );
+
+    border-bottom-color: #2fae74;
 }
 
-#battery {
-background-color: @azu-green;
-color: @azu-fg-dark;
+#idle_inhibitor.deactivated {
+    color: #6e3a80;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff0fb,
+        #e0a2ef
+    );
+
+    border-bottom-color: #b26cc8;
 }
 
-#battery.charging, #battery.plugged {
-background-color: #26A65B;
-color: #ffffff;
-}
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-background-color: #f53c3c;
-color: #ffffff;
-animation-name: blink;
-animation-duration: 0.5s;
-animation-timing-function: steps(12);
-animation-iteration-count: infinite;
-animation-direction: alternate;
-}
-
-#power-profiles-daemon {
-padding-right: 15px;
-background-color: @azu-purple;
-color: @azu-fg-dark;
-}
-
-#power-profiles-daemon.performance {
-background-color: #f53c3c;
-color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-background-color: @azu-blue;
-color: @azu-fg-dark;
-}
-
-#power-profiles-daemon.power-saver {
-background-color: @azu-green;
-color: @azu-fg-dark;
-}
-
-#cpu {
-background-color: @azu-purple;
-color: @azu-fg-dark;
-}
-
-#memory {
-background-color: @azu-pink-dark;
-color: #ffffff;
-}
-
-#disk {
-background-color: @azu-orange;
-color: #ffffff;
-}
-
-#backlight {
-background-color: @azu-yellow;
-color: @azu-fg-dark;
-}
-
-#network {
-background-color: @azu-blue;
-color: @azu-fg-dark;
-}
-
-#network.disconnected {
-background-color: #f53c3c;
-color: #ffffff;
-}
+/* SONIDO */
 
 #pulseaudio {
-background-color: @azu-yellow;
-color: @azu-fg-dark;
+    color: #a3204f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff2f7,
+        #ff9ec2
+    );
+
+    border-bottom-color: #e64a75;
 }
 
 #pulseaudio.muted {
-background-color: #64727D;
-color: #ffffff;
+    color: #796d71;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f7f3f4,
+        #d6cccf
+    );
+
+    border-bottom-color: #96898e;
 }
 
+#pulseaudio.bluetooth {
+    color: #5b34a6;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f6f0ff,
+        #c2a2fa
+    );
+
+    border-bottom-color: #8f63d8;
+}
+
+
+/* RED */
+
+#network {
+    color: #17925f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f0fff8,
+        #7be8bd
+    );
+
+    border-bottom-color: #2fb884;
+}
+
+#network.ethernet {
+    color: #4d6b00;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fcffe3,
+        #c9ea50
+    );
+
+    border-bottom-color: #8fb01e;
+}
+
+#network.disconnected {
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8ea3,
+        #d83a5b
+    );
+
+    border-bottom-color: #93374b;
+
+    text-shadow: 0 1px rgba(93, 31, 45, 0.85);
+}
+
+
+/* PERFIL DE ENERGÍA */
+
+#power-profiles-daemon {
+    color: #d64a1f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffbe0,
+        #ffdc4d
+    );
+
+    border-bottom-color: #d1a300;
+}
+
+#power-profiles-daemon.performance {
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8fa3,
+        #e0385a
+    );
+
+    border-bottom-color: #98243f;
+
+    text-shadow: 0 1px rgba(97, 24, 39, 0.90);
+}
+
+#power-profiles-daemon.power-saver {
+    color: #14603f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #eafff5,
+        #5fdba0
+    );
+
+    border-bottom-color: #2fae74;
+}
+
+
+/* CPU Y MEMORIA */
+
+#cpu {
+    color: #7a2a72;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fff1fd,
+        #ef9fe4
+    );
+
+    border-bottom-color: #b74aa8;
+}
+
+#memory {
+    color: #4d6b00;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fcffe3,
+        #c9ea50
+    );
+
+    border-bottom-color: #8fb01e;
+}
+
+
+/* TEMPERATURA */
+
 #temperature {
-background-color: @azu-orange;
-color: #ffffff;
+    color: #a1470f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffaf0,
+        #ffd9a6
+    );
+
+    border-bottom-color: #e0913a;
 }
 
 #temperature.critical {
-background-color: #eb4d4b;
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8ea3,
+        #d1274a
+    );
+
+    border-bottom-color: #7d1d32;
+
+    text-shadow: 0 1px rgba(84, 16, 31, 0.90);
 }
 
-#tray {
-background-color: @azu-bg-module;
+
+/* BRILLO */
+
+#backlight {
+    color: #7a5410;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffce0,
+        #ffe14d
+    );
+
+    border-bottom-color: #d1a300;
 }
 
-#idle_inhibitor {
-background-color: @azu-pink-dark;
-color: #ffffff;
-}
 
-#idle_inhibitor.activated {
-background-color: @azu-yellow;
-color: @azu-fg-dark;
-}
-
-#mpd {
-background-color: @azu-green;
-color: @azu-fg-dark;
-}
-
-#mpd.disconnected {
-background-color: #f53c3c;
-}
+/* ESTADO DEL TECLADO */
 
 #keyboard-state {
-background: @azu-pink;
-color: @azu-fg-dark;
-margin: 0 5px;
+    color: #5b34a6;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f8f2ff,
+        #c9a9ff
+    );
+
+    border-bottom-color: #8f63d8;
+}
+
+
+/* BATERÍA */
+
+#battery {
+    color: #17925f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f0fff8,
+        #7be8bd
+    );
+
+    border-bottom-color: #2fb884;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #14603f;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #eafff5,
+        #43d68f
+    );
+
+    border-bottom-color: #1f9e63;
+}
+
+#battery.full {
+    color: #1f6b4a;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f4fff9,
+        #a5eecd
+    );
+}
+
+#battery.warning {
+    color: #7a5410;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffbdc,
+        #ffd93d
+    );
+
+    border-bottom-color: #d1a300;
+}
+
+#battery.critical {
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8ea3,
+        #d1274a
+    );
+
+    border-bottom-color: #85213a;
+
+    text-shadow: 0 1px rgba(90, 20, 37, 0.90);
+}
+
+
+/* RELOJ */
+
+#clock {
+    color: #6b3b12;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #fffbdc,
+        #ffd23f
+    );
+
+    border: 1px solid #fff7b1;
+    border-bottom: 2px solid #d09a0c;
+
+    box-shadow:
+    inset 0 1px #ffffff,
+    inset 0 -1px rgba(182, 127, 26, 0.25),
+    0 2px 4px rgba(110, 60, 10, 0.42);
+
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+
+/* BANDEJA */
+
+#tray {
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 250, 240, 0.96),
+        rgba(255, 205, 224, 0.94)
+    );
+
+    border-bottom-color: rgba(230, 74, 117, 0.60);
+
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    background-color: #ff8fb3;
+    border-radius: 5px;
+}
+
+
+/* BOTÓN DE APAGADO */
+
+#custom-power {
+    color: #ffffff;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff8fa3,
+        #e0385a
+    );
+
+    border: 1px solid #ffb7c4;
+    border-bottom: 2px solid #8f263d;
+
+    box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.65),
+    0 2px 4px rgba(87, 25, 40, 0.55);
+
+    padding-left: 11px;
+    padding-right: 11px;
+
+    font-size: 15px;
+
+    text-shadow: 0 1px rgba(85, 20, 35, 0.90);
+}
+
+#custom-power:hover {
+    background:
+    linear-gradient(
+        to bottom,
+        #ffb0be,
+        #ee4a6d
+    );
+
+    border-bottom-color: #7d1f34;
+}
+
+
+/* TOOLTIP */
+
+tooltip {
+    color: #55474b;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.98),
+        rgba(255, 225, 237, 0.98)
+    );
+
+    border: 1px solid #ff9bbd;
+    border-radius: 9px;
+
+    box-shadow:
+    inset 0 1px #ffffff,
+    0 3px 8px rgba(80, 30, 20, 0.50);
+}
+
+tooltip label {
+    color: #55474b;
+    padding: 6px;
+    text-shadow: 0 1px #ff6b4a;
 }

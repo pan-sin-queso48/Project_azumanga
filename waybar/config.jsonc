@@ -1,14 +1,38 @@
-// -*- mode: jsonc -*-
 {
-    "height": 30,
+    // ============================================================
+    // PROJECT_AZUMANGA - WAYBAR
+    // Estética Azumanga Daioh + Aero de los años 2000
+    // ============================================================
+
+    "layer": "top",
+    "position": "top",
+
+    // Altura suficiente para crear botones con volumen.
+    "height": 38,
+
+    // Separación global entre módulos.
     "spacing": 4,
+
+    // Pequeño margen exterior para que parezca una barra flotante.
+    "margin-top": 6,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    // Actualizar automáticamente cuando cambie el CSS.
+    "reload_style_on_change": true,
+
+    // ============================================================
+    // DISTRIBUCIÓN
+    // ============================================================
 
     "modules-left": [
         "hyprland/workspaces"
     ],
+
     "modules-center": [
         "hyprland/window"
     ],
+
     "modules-right": [
         "mpd",
         "idle_inhibitor",
@@ -26,10 +50,17 @@
         "custom/power"
     ],
 
+    // ============================================================
+    // ESPACIOS DE TRABAJO
+    // ============================================================
+
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "sort-by-number": true,
+        "active-only": false,
+        "all-outputs": false,
+
         "format-icons": {
             "1": "あ",
             "2": "ず",
@@ -40,86 +71,174 @@
             "7": "王",
             "8": "猫",
             "9": "音",
-            "10": "電"
+            "10": "電",
+
+            // Símbolo usado para espacios no incluidos arriba.
+            "default": "星"
         }
     },
 
+    // ============================================================
+    // VENTANA ACTIVA
+    // ============================================================
+
     "hyprland/window": {
-        "max-length": 50,
-        "separate-outputs": true
+        "format": "窓  {title}",
+        "max-length": 45,
+        "separate-outputs": true,
+        "rewrite": {
+            "": "Escritorio Azumanga",
+            "(.*) — Mozilla Firefox": "狐  $1",
+            "(.*) - Visual Studio Code": "符  $1"
+        }
     },
+
+    // ============================================================
+    // ESTADO DEL TECLADO
+    // ============================================================
 
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
         "format": "{name} {icon}",
+
         "format-icons": {
             "locked": "",
             "unlocked": ""
         }
     },
 
+    // ============================================================
+    // MÚSICA CON MPD
+    // ============================================================
+
     "mpd": {
-        "format": "曲 {stateIcon} {artist} - {title} {volume}%",
-        "format-disconnected": "曲 切",
+        "format": "曲 {stateIcon}  {artist} - {title}",
+        "format-paused": "曲 {stateIcon}  {artist} - {title}",
         "format-stopped": "曲 止",
+        "format-disconnected": "曲 切",
+
+        "max-length": 28,
         "interval": 5,
+
         "state-icons": {
             "paused": "休",
             "playing": "流"
-        }
+        },
+
+        "tooltip-format": "{artist}\n{album}\n{title}\n{elapsedTime:%M:%S} / {totalTime:%M:%S}",
+
+        "on-click": "mpc toggle",
+        "on-click-right": "mpc stop",
+        "on-scroll-up": "mpc volume +5",
+        "on-scroll-down": "mpc volume -5"
     },
+
+    // ============================================================
+    // INHIBIDOR DE INACTIVIDAD
+    // ============================================================
 
     "idle_inhibitor": {
         "format": "{icon}",
+
         "format-icons": {
             "activated": "起",
             "deactivated": "寝"
-        }
+        },
+
+        "tooltip-format-activated": "El equipo permanecerá despierto",
+        "tooltip-format-deactivated": "Suspensión automática permitida"
     },
+
+    // ============================================================
+    // BANDEJA DEL SISTEMA
+    // ============================================================
 
     "tray": {
-        "spacing": 10
+        "icon-size": 17,
+        "spacing": 8
     },
+
+    // ============================================================
+    // PROCESADOR
+    // ============================================================
 
     "cpu": {
+        "interval": 2,
         "format": "算 {usage}%",
-        "tooltip": true
+        "tooltip": true,
+        "tooltip-format": "Uso del procesador: {usage}%"
     },
+
+    // ============================================================
+    // MEMORIA
+    // ============================================================
 
     "memory": {
+        "interval": 5,
         "format": "記 {}%",
-        "tooltip": true
+        "tooltip": true,
+        "tooltip-format": "Memoria utilizada: {used:0.1f} GiB\nMemoria disponible: {avail:0.1f} GiB"
     },
 
-    "clock": {
-        "format": "時 {:%H:%M}",
-        "format-alt": "暦 {:%Y-%m-%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
+    // ============================================================
+    // TEMPERATURA
+    // ============================================================
 
     "temperature": {
         "critical-threshold": 80,
-        "format": "熱 {temperatureC}°C"
+        "interval": 5,
+
+        "format": "熱 {temperatureC}°C",
+        "format-critical": "危 {temperatureC}°C",
+
+        "tooltip-format": "Temperatura: {temperatureC}°C"
     },
+
+    // ============================================================
+    // BRILLO
+    // ============================================================
 
     "backlight": {
-        "format": "光 {percent}%"
+        "format": "光 {percent}%",
+        "tooltip-format": "Brillo: {percent}%",
+
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
     },
 
+    // ============================================================
+    // BATERÍA
+    // ============================================================
+
     "battery": {
+        "interval": 10,
+
         "states": {
             "warning": 30,
             "critical": 15
         },
+
         "format": "電 {capacity}%",
-        "format-charging": "充 {capacity}%"
+        "format-full": "満 {capacity}%",
+        "format-charging": "充 {capacity}%",
+        "format-plugged": "線 {capacity}%",
+        "format-warning": "注 {capacity}%",
+        "format-critical": "危 {capacity}%",
+
+        "tooltip-format": "Batería: {capacity}%\nConsumo: {power} W\nTiempo restante: {time}"
     },
+
+    // ============================================================
+    // PERFIL DE ENERGÍA
+    // ============================================================
 
     "power-profiles-daemon": {
         "format": "力 {icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
+
+        "tooltip-format": "Perfil: {profile}\nControlador: {driver}",
+
         "format-icons": {
             "default": "常",
             "performance": "速",
@@ -128,30 +247,74 @@
         }
     },
 
+    // ============================================================
+    // RED
+    // ============================================================
+
     "network": {
+        "interval": 3,
+
         "format-wifi": "網 {signalStrength}%",
         "format-ethernet": "網 有",
-        "format-disconnected": "断"
+        "format-linked": "網 結",
+        "format-disconnected": "断",
+
+        "tooltip-format-wifi": "{essid}\nSeñal: {signalStrength}%\nDirección: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet\nInterfaz: {ifname}\nDirección: {ipaddr}",
+        "tooltip-format-disconnected": "Sin conexión de red",
+
+        "on-click": "nm-connection-editor"
     },
+
+    // ============================================================
+    // SONIDO
+    // ============================================================
 
     "pulseaudio": {
+        "scroll-step": 5,
+
         "format": "音 {volume}%",
-        "format-bluetooth": "音 {volume}%",
-        "format-bluetooth-muted": "静",
         "format-muted": "静",
-        "on-click": "pavucontrol"
+        "format-bluetooth": "藍 {volume}%",
+        "format-bluetooth-muted": "藍 静",
+
+        "tooltip-format": "Volumen: {volume}%\nDispositivo: {desc}",
+
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
-    "custom/power": {
-        "format": "⏻ ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "/usr/share/waybar/custom_modules/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+    // ============================================================
+    // RELOJ Y CALENDARIO
+    // ============================================================
+
+    "clock": {
+        "interval": 1,
+
+        "format": "時 {:%H:%M}",
+        "format-alt": "暦 {:%d/%m/%Y}",
+
+        "tooltip-format": "<b>{:%A, %d de %B de %Y}</b>\n\n<tt><small>{calendar}</small></tt>",
+
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+
+            "format": {
+                "months": "<span color='#d96b91'><b>{}</b></span>",
+                "days": "<span color='#fff8e7'>{}</span>",
+                "weeks": "<span color='#80b8df'>S{}</span>",
+                "weekdays": "<span color='#77bba4'><b>{}</b></span>",
+                "today": "<span color='#f5c85b'><b><u>{}</u></b></span>"
+            }
+        },
+
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
         }
-    }
+    },
 }
