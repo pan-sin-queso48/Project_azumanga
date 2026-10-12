@@ -1,0 +1,87 @@
+
+;; Lee el título de la canción activa cada segundo
+(defpoll titulo_cancion :interval "1s"
+  "playerctl metadata --format '{{ title }}' 2>/dev/null || echo 'Sin reproducción'")
+
+;; Lee el nombre del artista activo cada segundo
+(defpoll artista_cancion :interval "1s"
+  "playerctl metadata --format '{{ artist }}' 2>/dev/null || echo 'Artista desconocido'")
+
+(defwidget reproductor []
+  (box :class "tarjeta-menu"
+       :orientation "h"
+       :space-evenly false
+
+    ;; 1. COLUMNA IZQUIERDA: Imagen dinámica
+    (image :class "banner-izquierdo"
+           :path imagen_banners
+           :image-height 340) ;; Mantiene la altura fija; el ancho se adapta solo
+
+    ;; 2. COLUMNA DERECHA: Lista de opciones
+    (box :class "panel-derecho"
+         :orientation "v"
+         :space-evenly false
+         :spacing 8
+
+      ;; Cabecera con Ícono + Título y Artista dinámicos
+      (box :class "barra-cabecera"
+           :orientation "h"
+           :space-evenly false
+           :spacing 8
+        (label :class "icono-cabecera" :text "🎵")
+        (box :orientation "v" :space-evenly false
+          (label :class "texto-titulo"  :limit-width 24 :text titulo_cancion  :halign "start")
+          (label :class "texto-artista" :limit-width 28 :text artista_cancion :halign "start")))
+
+      ;; Botón: play/pausa
+      (button :class "boton-opcion"
+              :onclick "playerctl play-pause"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "⏯️")
+          (label :class "texto-opcion" :text "play/pausa")))
+
+      ;; Botón: siguiente
+      (button :class "boton-opcion"
+              :onclick "playerctl next"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "⏭️")
+          (label :class "texto-opcion" :text "siguiente")))
+
+      ;; Botón: anterior
+      (button :class "boton-opcion"
+              :onclick "playerctl previous"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "⏮️")
+          (label :class "texto-opcion" :text "anterior")))
+
+      ;; Botón: mas volumen
+      (button :class "boton-opcion"
+              :onclick "amixer set Master 10%+"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "➕")
+          (label :class "texto-opcion" :text "mas volumen")))
+
+      ;; Botón: menos volumen
+      (button :class "boton-opcion"
+              :onclick "amixer set Master 10%-"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "➖")
+          (label :class "texto-opcion" :text "menos volumen"))))))
+
+
+
+;; =========================================================
+;; VENTANA VENTANA FLOTANTE / MODAL
+;; =========================================================
+
+(defwindow reproductor
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "0px"
+                      :height "294px"
+                      :anchor "center")
+  :stacking "fg"
+  :windowtype "dialog"
+  :wm-ignore false
+  (reproductor))

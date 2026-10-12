@@ -1,0 +1,6 @@
+(include "/home/joaquin/widgets/powermenu.yuck")
+(include "/home/joaquin/widgets/reproductor.yuck")
+
+(defvar imagen_banner "")
+
+
