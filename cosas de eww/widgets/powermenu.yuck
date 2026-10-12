@@ -1,0 +1,79 @@
+;; =========================================================
+;; ESTRUCTURA DEL POWERMENU (Estilo Azumanga)
+;; =========================================================
+
+(defwidget powermenu-widget []
+  (box :class "tarjeta-menu"
+       :orientation "h"
+       :space-evenly false
+
+    ;; 1. COLUMNA IZQUIERDA: Imagen dinámica
+    (image :class "banner-izquierdo"
+           :path imagen_banner
+           :image-height 340) ;; Mantiene la altura fija; el ancho se adapta solo
+
+    ;; 2. COLUMNA DERECHA: Lista de opciones
+    (box :class "panel-derecho"
+         :orientation "v"
+         :space-evenly false
+         :spacing 8
+
+      ;; Cabecera / Simulador de buscador
+      (box :class "barra-cabecera"
+           :orientation "h"
+           :space-evenly false
+           :spacing 8
+        (label :class "icono-cabecera" :text "🌸")
+        (label :class "texto-cabecera" :text "Powermenu 何を探す? (¿Qué buscas?)..."))
+
+      ;; Botón: Bloquear
+      (button :class "boton-opcion"
+              :onclick "loginctl lock-session"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "🔒")
+          (label :class "texto-opcion" :text "Bloquear")))
+
+      ;; Botón: Suspender
+      (button :class "boton-opcion"
+              :onclick "systemctl suspend"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "🌙")
+          (label :class "texto-opcion" :text "Suspender")))
+
+      ;; Botón: Cerrar Sesión
+      (button :class "boton-opcion"
+              :onclick "loginctl terminate-user $USER"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "🚪")
+          (label :class "texto-opcion" :text "Cerrar Sesión")))
+
+      ;; Botón: Reiniciar
+      (button :class "boton-opcion"
+              :onclick "systemctl reboot"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "🔄")
+          (label :class "texto-opcion" :text "Reiniciar")))
+
+      ;; Botón: Apagar
+      (button :class "boton-opcion"
+              :onclick "systemctl poweroff"
+        (box :orientation "h" :space-evenly false :spacing 12
+          (label :class "icono-opcion" :text "🔴")
+          (label :class "texto-opcion" :text "Apagar"))))))
+
+
+;; =========================================================
+;; VENTANA VENTANA FLOTANTE / MODAL
+;; =========================================================
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "520px"
+                      :height "0px"
+                      :anchor "center")
+  :stacking "fg"
+  :windowtype "dialog"
+  :wm-ignore false
+  (powermenu-widget))

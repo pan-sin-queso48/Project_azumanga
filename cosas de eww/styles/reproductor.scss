@@ -1,0 +1,91 @@
+/* =========================================================
+ *  ESTILOS POWERMENU - ESTILO AZUMANGA
+ *  ========================================================= */
+
+/* Tarjeta Principal - Con degradado y sombra solida estilo Pop */
+.tarjeta-menu {
+  background-image: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
+  border-radius: 24px;
+  border: 3px solid #ff758f;
+  /* Sombra solida desplazada para dar volumen sin difuminar mucho */
+  box-shadow: 10px 10px 0px rgba(164, 19, 60, 0.15);
+}
+
+/* Imagen de Osaka (o Yotsuba) rotatoria */
+/* Imagen rotatoria adaptativa */
+.banner-izquierdo {
+  border-radius: 20px 0px 0px 20px;
+  border-right: 3px solid #ff758f;
+}
+
+/* Panel de botones derecho */
+.panel-derecho {
+  padding: 20px;
+  min-width: 300px;
+}
+
+/* Cabecera / Buscador simulado */
+.barra-cabecera {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 10px 14px;
+  border: 2px dashed #ffb3c1; /* Borde punteado para un toque mas jugueton */
+  margin-bottom: 5px;
+}
+
+.titulo-cancion {
+    font-weight: bold;
+    font-size: 15px;
+    color: #f5e0dc;
+}
+
+.texto-titulo {
+  color: #a4133c;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.texto-artista {
+  color: #ff758f;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* Botones de Opciones - Estilo Tecla o Sticker */
+.boton-opcion {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  border: 2px solid #ffccd5;
+  color: #590d22;
+  font-weight: 800;
+
+  /* Efecto de volumen del boton */
+  box-shadow: 0px 4px 0px #ffccd5;
+
+  /* Transicion suave para la animacion */
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Animacion al pasar el cursor (Hover) */
+.boton-opcion:hover, {
+  background-color: #ff758f;
+  color: #ffffff;
+  border-color: #a4133c;
+
+  /* El boton baja, la sombra se reduce a 0 */
+  box-shadow: 0px 0px 0px #a4133c;
+
+  /* Usamos margenes para simular el desplazamiento fisico hacia abajo */
+  margin-top: 4px;
+  margin-bottom: -4px;
+}
+
+.icono-opcion {
+  font-size: 16px; /* Iconos un poco mas grandes */
+}
+
+.texto-opcion {
+  font-size: 14px;
+}

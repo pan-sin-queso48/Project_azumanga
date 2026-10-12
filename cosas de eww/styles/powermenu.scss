@@ -1,0 +1,69 @@
+/* =========================================================
+ *  ESTILO DEL POWERMENU ESTILO AZUMANGA
+ *  ========================================================= */
+
+/* tarjeta principal */
+.tarjeta-menu {
+  background-image: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
+  border-radius: 24px;
+  border: 3px solid #ff758f;
+  box-shadow: 10px 10px 0px rgba(164, 19, 60, 0.15);
+}
+
+
+/* el lado de las imagenes que van rotando */
+.banner-izquierdo {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 3px solid #ff758f;
+}
+
+/* el lado de los botones */
+.panel-derecho {
+  padding: 20px;
+  min-width: 300px;
+}
+
+/* cabecera */
+.barra-cabecera {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 10px 14px;
+  border: 2px dashed #ffb3c1;
+  margin-bottom: 5px;
+}
+
+.texto-cabecera {
+  color: #a4133c;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* botones de opciones */
+.boton-opcion {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  border: 2px solid #ffccd5;
+  color: #590d22;
+  font-weight: 800;
+  box-shadow: 0px 4px 0px #ffccd5;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* animacion al pasar el cursor (hover) */
+.boton-opcion:hover, {
+  background-color: #ff758f;
+  color: #ffffff;
+  border-color: #a4133c;
+  box-shadow: 0px 0px 0px #a4133c;
+  margin-top: 4px;
+  margin-bottom: -4px;
+}
+
+.icono-opcion {
+  font-size: 16px;
+}
+
+.texto-opcion {
+  font-size: 14px;
+}
