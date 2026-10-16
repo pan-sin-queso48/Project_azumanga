@@ -14,7 +14,7 @@
 
     ;; 1. COLUMNA IZQUIERDA: Imagen dinámica
     (image :class "banner-izquierdo"
-           :path imagen_banners
+           :path imagen_banner
            :image-height 340) ;; Mantiene la altura fija; el ancho se adapta solo
 
     ;; 2. COLUMNA DERECHA: Lista de opciones

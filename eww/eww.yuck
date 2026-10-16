@@ -1,0 +1,6 @@
+(include "$HOME/widgets/powermenu.yuck")
+(include "$HOME/widgets/reproductor.yuck")
+
+(defvar imagen_banner "")
+
+

@@ -79,6 +79,8 @@ mkdir -p "$BACKUP_DIR"
 [ -d "$HYPR_DIR" ] && mv "$HYPR_DIR" "$BACKUP_DIR/"
 for folder in fastfetch kitty rofi swaync waybar; do
     [ -d "$CONFIG_DIR/$folder" ] && mv "$CONFIG_DIR/$folder" "$BACKUP_DIR/"
+    [ -d "$HOME_DIR/widgets" ] && mv "$HOME_DIR/widgets" "$BACKUP_DIR/"
+    [ -d "$HOME_DIR/styles" ] && mv "$HOME_DIR/styles" "$BACKUP_DIR/"
 done
 
 #instalación de archivos a ~/.config y ~/.config/hypr
@@ -86,7 +88,7 @@ echo -e "\n${YELLOW}[4/6] Desplegando archivos del proyecto...${RESET}"
 mkdir -p "$CONFIG_DIR" "$HYPR_DIR" "$BIN_DIR"
 
 #carpetas a ~/.config
-RED_FOLDERS=("fastfetch" "kitty" "rofi" "swaync" "waybar")
+RED_FOLDERS=("fastfetch" "kitty" "rofi" "swaync" "waybar" "eww")
 for folder in "${RED_FOLDERS[@]}"; do
     if [ -d "$REPO_DIR/$folder" ]; then
         cp -rf "$REPO_DIR/$folder" "$CONFIG_DIR/"
@@ -103,16 +105,24 @@ for item in "${BLUE_ITEMS[@]}"; do
     fi
 done
 
-#archivo .bashrc a ~/
+#archivo .bashrc a ~/ y la carpeta widgets y styles
 if [ -f "$REPO_DIR/.bashrc" ]; then
     [ -f "$HOME/.bashrc" ] && cp "$HOME/.bashrc" "$BACKUP_DIR/.bashrc.bak"
     cp -f "$REPO_DIR/.bashrc" "$HOME_DIR/.bashrc"
     echo -e "  -> Archivo .bashrc copiado a $HOME/"
 fi
 
+EWW_FOLDERS=("widgets" "styles")
+for folder in "${EWW_FOLDERS[@]}"; do
+    if [ -d "$REPO_DIR/$folder" ]; then
+        cp -rf "$REPO_DIR/$folder" "$HOME_DIR/"
+        echo -e "  -> Carpeta '$folder' (EWW) copiada a $HOME_DIR/"
+    fi
+done
+
 #mover scripts especiales a ~/.local/bin
 echo -e "\n${YELLOW}[5/6] Moviendo scripts de MPV a ~/.local/bin y otorgando permisos...${RESET}"
-YELLOW_SCRIPTS=("algo.sh" "azu.sh" "playlist.sh")
+YELLOW_SCRIPTS=("algo.sh" "azu.sh" "playlist.sh" "m.sh" "p.sh")
 
 for script in "${YELLOW_SCRIPTS[@]}"; do
     if [ -f "$REPO_DIR/scripts/$script" ]; then

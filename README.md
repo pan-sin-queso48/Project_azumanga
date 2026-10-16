@@ -2,6 +2,8 @@
   
 ¡Hola! Esta es mi configuración personal de Hyprland, que lo he transformado en mi proyecto personal para compartirlo la comunidad de Azumanga Daioh. A diferencia de la mayoría de setups que encuentras en internet, este proyecto **huye por completo del minimalismo clásico** de Hyprland. Está diseñado priorizando una personalización visual completa, comodidad y un entorno lleno de vida con estetica de Azumanga Daioh
 
+![Escritorio de Project_azumanga](assets/algo1.png)
+![Otra imagen del escritorio de Project_azumanga](assets/algo3.png)
 Este proyecto recibirá actualizaciones pequeñas o después de un tiempo debido a que actualmente me encuentro estudiando y ademas aprendiendo varias cosas como lenguajes de programación, diseño gráfico y a usar aplicaciones que me sirvan para lo que tengo planeado hacer para el proyecto. 
 Todo con tal de que quede estable cada funcion y para que pueda llegar a mas personas y que lo puedan usar sin prolemas
 
@@ -41,6 +43,7 @@ El repositorio incluye un script en Bash llamado `cambiar_fondo.sh` que se encar
 ## Funcion de mpv
 Si quieres escuchar música sin tener que abrir el navegador. He preparado una configuración de mpv para que puedan escuchar música en modo aleatorio y solo oprimiendo `super + Y` o `super + U`. Con dos playlist, una es mi playlist de lo que a mí me gusta, y la otra es para darle más ambiente al escritorio, con músicas japonesas de mi selección y gusto, pero si quieres escuchar de tu propia playlist puedes modificar  uno de los dos archivos en donde trae el script, cambia el URL de la playlist que ya está por el URL de tu playlist
 Tambien con el archivo `azu.sh` sirve para reproducir una playlist de los capitulos de Azumanga Daioh (subtitulada al español) con el atajo `super + Z`
+![mpv](assets/algo4.png)
 >**Nota:** los archivos se encuentran en la carpeta `scripts`, el archivo `playlist.sh` es mi playlist que si quieres puedes escucharlo y se ejecuta con `super + Y` y el archivo `algo.sh` es la playlist que solo contiene musica japonesa de mi seleccion y gusto y ejecuta con `super + U`, para parar o reanundar es con `super + P`, para cambiar a la siguiente cancion es con `super + O` y para cambiar a la anterior es con `super + I`, y si queres puedes cambiarlo en en archivo `07-bindings.conf` 
 
 **Cosas por instalar:** 
@@ -59,6 +62,7 @@ Un menu es para control de multimedia y el otro es un powermenu
 
 **Forma de usar:**
 Primero hay que instalar EWW y sus dependencias, para saber como vayan a https://elkowar-github-io.translate.goog/eww/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc.
-Luego en la carpeta `cosas de eww` mover la carpeta `styles` y `widgets` a `~/` y en la misma carpeta de `cosas de eww`, la capeta `eww` mover a `~/.config`
+Luego mover la carpeta `styles` y `widgets` a `~/` y la capeta `eww` mover a `~/.config`
 En la carpeta de scripts, los archivos `m.sh` y `p.sh` mover a la ubicacion `~/.local/bin`
+![Escritorio de Project_Azumanga](assets/algo5.png)
 > **Nota:** para cerrar el menu es presionando de nuevo el atajo ya sea `super + L` como `super + M`. Les recomiendo ver el archivo `07-bindings.conf` para que sepan los atajos o los cambien a su gusto
