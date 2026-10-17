@@ -56,13 +56,13 @@ Tambien con el archivo `azu.sh` sirve para reproducir una playlist de los capitu
 **Aviso:** Pero antes de eso, recuerda que no es un instalador automático, para que funcione asegúrate de que sean ejecutables los archivos `playlist.sh`, `algo.sh` y `azu.sh`; debes mover los archivos `playlist.sh`, `algo.sh` y `azu.sh` a esta dirección: `~/.local/bin` y ejecutar estos comandos: `mkdir -p ~/.config/mpv/scripts` y  `ln -s /usr/lib64/mpv/mpris.so ~/.config/mpv/scripts/mpris.so` para que funciene los atajos de playerctl funcione correctamente y para que el sistema reconosca los datos y la musica.
 > si no funciona los archivo al moverlos a `~/.local/bin` pon esto en el terminal: `echo 'export PATH="$HOME/.local/bin$PATH"' >> ~/.bashrc && source ~/.bashrc`
 
-## Menu con EWW (ElKowars wacky widgets)
-Este nuevo menu lo he hecho porque siendo sincero no entendi por completo el lenguaje de rofi, entoces decidi probar por EWW, por ahora se encuentra en face experimental por lo que aun estoy aprendiendo el lenguaje `yuck` pero he logrado hacer dos menus que me salio casi identico como los que hice con rofi
-Un menu es para control de multimedia y el otro es un powermenu
+## Rama experimental
 
-**Forma de usar:**
-Primero hay que instalar EWW y sus dependencias, para saber como vayan a https://elkowar-github-io.translate.goog/eww/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc.
-Luego mover la carpeta `styles` y `widgets` a `~/` y la capeta `eww` mover a `~/.config`
-En la carpeta de scripts, los archivos `m.sh` y `p.sh` mover a la ubicacion `~/.local/bin`
+
+- **Menus con EWW (ElKowars wacky widgets):**Este nuevo menu lo he hecho porque siendo sincero no entendi por completo el lenguaje de rofi, entoces decidi probar por EWW, por ahora se encuentra en face experimental por lo que aun estoy aprendiendo el lenguaje `yuck` pero he logrado hacer dos menus que me salio casi identico como los que hice con rofi
+Un menu es para control de multimedia y el otro es un powermenu
 ![Escritorio de Project_Azumanga](assets/algo5.png)
-> **Nota:** para cerrar el menu es presionando de nuevo el atajo ya sea `super + L` como `super + M`. Les recomiendo ver el archivo `07-bindings.conf` para que sepan los atajos o los cambien a su gusto
+
+- **Instalador autamatico:** He creado archivo instalador que mueve las carpetas, scripts y archivos a donde deben ir
+
+>Para un poco mas de informacion sobre estos dos, puedes ver en el README de la rama experimental
