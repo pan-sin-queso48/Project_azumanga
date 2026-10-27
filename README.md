@@ -9,6 +9,10 @@ Todo con tal de que quede estable cada funcion y para que pueda llegar a mas per
 
 Tambien incluye algun que otra imagen, fondo o referencia de Yotsuba&!, otra obra de Kiyohiko Azuma, pero en su mayoria hay Azumanga Daioh.
 
+## Mensaje para todos
+Hola a todos, quiero decir que se animen a probar esto si es que es de su interés, no se avergüenze solo porque el entorno tiene colores como el rosa, los colores no tienen género y yo solo tome de la paleta de colores de azumanga daioh
+Este proyecto lo hago con amor y para tener algo que compartir para la comunidad de azumanga daioh, aunque tal vez no muchos lo utilicen, agrdeseria a cada uno de los que usarían esto
+
 
 ## ⚠️ Notas importantes antes de usar
 
