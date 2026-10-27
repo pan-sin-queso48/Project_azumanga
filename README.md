@@ -14,9 +14,17 @@ Hola a todos, quiero decir que se animen a probar esto si es que es de su inter�
 Este proyecto lo hago con amor y para tener algo que compartir para la comunidad de azumanga daioh, aunque tal vez no muchos lo utilicen, agrdeseria a cada uno de los que usarían esto
 
 
+## Agradecimientos 
+Quiero dar la gracias a las siguientes personas que me han seguido por Twitter 
+- '@osakagura4life'
+- '@Brusito110_'
+- '@KonekNoneco'
+Muchas gracias 😘 
+> Si quieres aparecer aqui puedes seguir en Twitter o mostrarme que instalaste mi proyecto 
+
 ## ⚠️ Notas importantes antes de usar
 
-- **Aviso para nuevos:**siendo sincero, como si te enseñan un bebè y dices esta bien bonito y en tu mente no piensas eso es que no estas siendo sincero; pero ya hablando en serio, hyprland es es un compocitor de wayland, en palabras que puedan entender es que su principal funcion es organizar automaticamente las ventanas en mosaico, por eso si eres nuevo usando hyprland le des una visita a la pagina oficial de hyprland `https://wiki.hypr.land/, y si eres nuevo en linux te recomiendo aprender lo basico de arch https://wiki.archlinux.org/title/Main_page, y aunque sea para sobrevivir hasta aprender mas de arch, le recomiendo a que aprendas a usar pacman
+- **Aviso para nuevos:** siendo sincero, como si te enseñan un bebè y dices esta bien bonito y en tu mente no piensas eso es que no estas siendo sincero; pero ya hablando en serio, hyprland es es un compocitor de wayland, en palabras que puedan entender es que su principal funcion es organizar automaticamente las ventanas en mosaico, por eso si eres nuevo usando hyprland le des una visita a la pagina oficial de hyprland `https://wiki.hypr.land/, y si eres nuevo en linux te recomiendo aprender lo basico de arch https://wiki.archlinux.org/title/Main_page, y aunque sea para sobrevivir hasta aprender mas de arch, le recomiendo a que aprendas a usar pacman
 - **Estructura modular:** Para mantener el orden, la configuración principal `hyprland.conf` está dividida en submódulos numerados dentro de la carpeta `conf.d/` (animaciones, decoración, reglas de ventanas, bindings, etc.).
 >Vean el aechivo `07-bindings.conf` en donde estan los atajos para que sepan o puedan cambiarlos a los que deseen
 - **Más notas:** Esta configuracion originalmente fue hecho en debian 13 y con hyprland 0.53, las versiones 1.0 y 1.1 fueron configuradas en hyprland 0.53, de ahi en adelante sera configurado en hyprland 0.56
@@ -63,7 +71,7 @@ Tambien con el archivo `azu.sh` sirve para reproducir una playlist de los capitu
 ## Rama experimental
 
 
-- **Menus con EWW (ElKowars wacky widgets):**Este nuevo menu lo he hecho porque siendo sincero no entendi por completo el lenguaje de rofi, entoces decidi probar por EWW, por ahora se encuentra en face experimental por lo que aun estoy aprendiendo el lenguaje `yuck` pero he logrado hacer dos menus que me salio casi identico como los que hice con rofi
+- **Menus con EWW (ElKowars wacky widgets):** Este nuevo menu lo he hecho porque siendo sincero no entendi por completo el lenguaje de rofi, entoces decidi probar por EWW, por ahora se encuentra en face experimental por lo que aun estoy aprendiendo el lenguaje `yuck` pero he logrado hacer dos menus que me salio casi identico como los que hice con rofi
 Un menu es para control de multimedia y el otro es un powermenu
 ![Escritorio de Project_Azumanga](assets/algo5.png)
 
