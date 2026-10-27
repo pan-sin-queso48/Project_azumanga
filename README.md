@@ -69,7 +69,11 @@ En la carpeta de scripts, los archivos `m.sh` y `p.sh` mover a la ubicacion `~/.
 
 ## Instalador automatico
 He creado archivo instalador que mueve las carpetas, scripts y archivos a donde deben ir, sin la necesidad de tu mismo moverlo, ademas tambien instalara dependencias necesarias para que funcione correctamente
->**Nota:** Lo dejo en experimental porque quiero asegurarme de que funcione bien y aun lo estoy probando aunque sea en una virtual box
+
+**Advertencia:**
+- Este instalador automatico esta pensado más para usuarios nuevos, si ya eres un usuario que que ya le sabes al Linux te recomiendo mejor a hacerlo a manualmente
+- Ya lo he probado y funciona pero aun hay cosas por arreglar y no llega a funcionar a la perfección 
+
 
 **Forma de usar:**
 Es muy sencillo, en el terminal clonas el repositoriocon el siguiente comando: `git clone --branch experimentos --single-branch https://github.com/pan-sin-queso48/Project_azumanga.git` 
