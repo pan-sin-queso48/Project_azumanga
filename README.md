@@ -15,11 +15,12 @@ Este proyecto lo hago con amor y para tener algo que compartir para la comunidad
 
 
 ## Agradecimientos 
-Quiero dar la gracias a las siguientes personas que me han seguido por Twitter 
-- '@osakagura4life'
-- '@Brusito110_'
-- '@KonekNoneco'
-Muchas gracias 😘 
+Quiero dar la gracias a las siguientes personas que me han seguido por Twitter. 
+Muchas gracias a todos ustedes
+- @osakagura4life
+- @Brusito110_
+- @KonekNoneco
+ 
 > Si quieres aparecer aqui puedes seguir en Twitter o mostrarme que instalaste mi proyecto 
 
 ## ⚠️ Notas importantes antes de usar
