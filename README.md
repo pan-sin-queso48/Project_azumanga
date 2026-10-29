@@ -23,6 +23,12 @@ Muchas gracias a todos ustedes, me animan a seguir adelante
 - @BarriosSan52635
 - @astarykasuga
 - @Ales1t0sDos
+- @nobodyfornowig
+- @GabrielRui19891
+- @IF_Twutter
+- @4T4T4Z
+- @Alfvt7nf
+- @Catbanana23
 
 > Si quieres aparecer aqui puedes seguir en Twitter o mostrarme que instalaste mi proyecto 
 
