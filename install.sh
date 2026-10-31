@@ -12,6 +12,7 @@ GREEN="\033[32m"
 BLUE="\033[34m"
 YELLOW="\033[33m"
 RED="\033[31m"
+PINK="\033[1;38;5;218m"
 RESET="\033[0m"
 
 #directorios de destinos
@@ -53,6 +54,9 @@ PACMAN_DEPS=(
     yt-dlp
     playerctl
     wl-clipboard
+    rofi
+    fuse2
+    kate
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_DEPS[@]}"

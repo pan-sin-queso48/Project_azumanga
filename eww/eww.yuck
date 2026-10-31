@@ -1,5 +1,5 @@
-(include "$HOME/widgets/powermenu.yuck")
-(include "$HOME/widgets/reproductor.yuck")
+(include "./widgets/powermenu.yuck")
+(include "./widgets/reproductor.yuck")
 
 (defvar imagen_banner "")
 
