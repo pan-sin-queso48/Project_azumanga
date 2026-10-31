@@ -29,6 +29,7 @@ Muchas gracias a todos ustedes, me animan a seguir adelante
 - @4T4T4Z
 - @Alfvt7nf
 - @Catbanana23
+- @MikeYao248
 
 > Si quieres aparecer aqui puedes seguir en Twitter o mostrarme que instalaste mi proyecto 
 
